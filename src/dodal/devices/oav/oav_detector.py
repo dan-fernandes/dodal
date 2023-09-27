@@ -10,6 +10,7 @@ from ophyd import (
     OverlayPlugin,
     ProcessPlugin,
     ROIPlugin,
+    StatsPlugin
     Signal,
     StatusBase,
 )
@@ -80,6 +81,7 @@ class OAV(AreaDetector):
     proc: ProcessPlugin = ADC(ProcessPlugin, "-DI-OAV-01:PROC:")
     over: OverlayPlugin = ADC(OverlayPlugin, "-DI-OAV-01:OVER:")
     tiff: OverlayPlugin = ADC(OverlayPlugin, "-DI-OAV-01:TIFF:")
+    stats: StatsPlugin = ADC(StatsPlugin, "-DI-OAV-01:STAT:")
     hdf5: HDF5Plugin = ADC(HDF5Plugin, "-DI-OAV-01:HDF5:")
     snapshot: SnapshotWithGrid = Component(SnapshotWithGrid, "-DI-OAV-01:MJPG:")
     mxsc: MXSC = ADC(MXSC, "-DI-OAV-01:MXSC:")
